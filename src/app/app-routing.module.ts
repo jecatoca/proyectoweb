@@ -1,10 +1,26 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule, Component } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
-const routes: Routes = [];
+import { RegistroMecanicosComponent } from './registro-mecanicos/registro-mecanicos.component';
+import { GestionVehiculosComponent } from './gestion-vehiculos/gestion-vehiculos.component';
+import { GestionServiciosComponent } from './gestion-servicios/gestion-servicios.component';
+import { GestionCotizacionComponent } from './gestion-cotizacion/gestion-cotizacion.component';
+
+
+const routes: Routes = [
+
+  { path: 'RegistroMecanicos', component: RegistroMecanicosComponent },
+  { path: 'GestionVehiculos', component: GestionVehiculosComponent },
+  { path: 'GestionServicios', component: GestionServiciosComponent },
+  { path: 'GestionCotizacion', component: GestionCotizacionComponent }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  declarations: [],
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
